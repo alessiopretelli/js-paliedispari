@@ -49,15 +49,10 @@ if ((pardis == "pari") || (pardis == "dispari")) {
 */
 
 function verifica(p, a) {
-    var array = [];
 
     for(i = a - 1; i >= 0; i--) {
-        array[a - (i + 1)] = p[i];
-    }
 
-    for (i = 0; i < a; i++) {
-
-        if (p[i] != array[i]) {
+        if (p[a - (i + 1)] != p[i]) {
             return false;
         }
 
