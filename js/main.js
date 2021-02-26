@@ -1,5 +1,5 @@
 /*
-//pari o dispari
+//pari o dispari, correzione nome funzione da 'somma' a 'paridispari'
 var pardis = prompt("Pari o dispari?").toLowerCase();
 
 if ((pardis == "pari") || (pardis == "dispari")) {
@@ -8,7 +8,7 @@ if ((pardis == "pari") || (pardis == "dispari")) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     
-    function somma(s, padi) {
+    function paridispari(s, padi) {
    
         if (padi == "pari") {
     
@@ -40,7 +40,7 @@ if ((pardis == "pari") || (pardis == "dispari")) {
         var plus = num + numm;
         console.log(plus);
 
-        if (somma(plus, pardis)) {
+        if (paridispari(plus, pardis)) {
             alert("Hai vinto!");
         } else {
             alert("Hai perso.")
@@ -55,12 +55,12 @@ if ((pardis == "pari") || (pardis == "dispari")) {
 }
 */
 
-//palindromi
-function verifica(p, a) {
+//palindromi, rimozione .parola_length da inserimento valori per funzione verifica().
+function verifica(p) {
 
-    for(i = a - 1; i >= 0; i--) {
+    for(i = p.length - 1; i >= 0; i--) {
 
-        if (p[a - (i + 1)] != p[i]) {
+        if (p[p.length - (i + 1)] != p[i]) {
             return false;
         }
 
@@ -71,7 +71,7 @@ function verifica(p, a) {
 
 var parola = prompt("Inserisci una parola.").toLowerCase();
 
-if (verifica(parola, parola.length)) {
+if (verifica(parola)) {
     alert(parola + " e' palindroma.");
 } else {
     alert(parola + " non e' palindroma.");
