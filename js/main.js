@@ -1,6 +1,6 @@
 /*
-var pardis = prompt("pari o dispari? Prego, digitare solo 'pari o 'dispari' in minuscolo.");
-console.log(pardis);
+//pari o dispari
+var pardis = prompt("Pari o dispari?").toLowerCase();
 
 if ((pardis == "pari") || (pardis == "dispari")) {
 
@@ -8,9 +8,8 @@ if ((pardis == "pari") || (pardis == "dispari")) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     
-    function somma(a, b, padi) {
-        var s = a + b;
-
+    function somma(s, padi) {
+   
         if (padi == "pari") {
     
             if(s % 2 == 0) {
@@ -31,16 +30,24 @@ if ((pardis == "pari") || (pardis == "dispari")) {
     
     }
     
-    var num = nums(1, 5);
-    console.log(num);
-    alert("Il numero uscito per l'utente e' " + num + ".");
-    var numm = nums(1, 5);
-    console.log(numm);
-    
-    if (somma(num, numm, pardis)) {
-        alert("Hai vinto!");
+    console.log(pardis);
+    var num = prompt("Inserisci un numero da 1 a 5") * 1;
+
+    if ((num >= 1) && (num <= 5)) {
+        console.log(num);
+        var numm = nums(1, 5);
+        console.log(numm);
+        var plus = num + numm;
+        console.log(plus);
+
+        if (somma(plus, pardis)) {
+            alert("Hai vinto!");
+        } else {
+            alert("Hai perso.")
+        }
+        
     } else {
-        alert("Hai perso. Il computer ha vinto.")
+        alert("Il valore numerico inserito non e' corretto.");
     }
     
 } else {
@@ -48,6 +55,7 @@ if ((pardis == "pari") || (pardis == "dispari")) {
 }
 */
 
+//palindromi
 function verifica(p, a) {
 
     for(i = a - 1; i >= 0; i--) {
